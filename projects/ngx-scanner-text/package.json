@@ -1,0 +1,20 @@
+{
+  "name": "ngx-scanner-text",
+  "version": "0.0.1-rc.1",
+  "description": "This library is built with the purpose of automatically getting text in images.",
+  "keywords": ["ngx-scanner-text"],
+  "author": "DaiDH <duonghuudai.id002@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/id1945/ngx-scanner-text.git"
+  },
+  "peerDependencies": {
+    "@angular/common": "^14.0.0",
+    "@angular/core": "^14.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0",
+    "tesseract.js": "^3.0.2"
+  }
+}

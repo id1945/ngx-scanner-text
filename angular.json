@@ -3,5 +3,39 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
+    "ngx-scanner-text": {
+      "projectType": "library",
+      "root": "projects/ngx-scanner-text",
+      "sourceRoot": "projects/ngx-scanner-text/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-scanner-text/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-scanner-text/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-scanner-text/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-scanner-text/src/test.ts",
+            "tsConfig": "projects/ngx-scanner-text/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-scanner-text/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "5d0c0aef-07b8-45a4-84da-3f75b5102a95"
   }
 }
