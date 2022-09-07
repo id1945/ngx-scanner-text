@@ -1,6 +1,6 @@
 {
   "name": "ngx-scanner-text",
-  "version": "0.0.1-rc.5",
+  "version": "1.0.0",
   "description": "This library is built with the purpose of automatically getting text in images.",
   "keywords": ["ngx-scanner-text"],
   "author": "DaiDH <duonghuudai.id002@gmail.com>",
