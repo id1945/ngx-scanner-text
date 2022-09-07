@@ -1,7 +1,6 @@
-import { Component, ElementRef, EventEmitter, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { createWorker } from 'tesseract.js';
 const BLANK = '';
-
 @Component({
   exportAs: 'scanner',
   selector: 'ngx-scanner-text',
@@ -26,6 +25,8 @@ export class NgxScannerTextComponent implements OnInit {
     result: BLANK,
     worker: null
   }
+
+  constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.drawImage();
@@ -64,6 +65,7 @@ export class NgxScannerTextComponent implements OnInit {
     const { data: { text, words } } = await worker.recognize(this.src);
     this.result.emit(text);
     this.data.result = text;
+    this.cdr.detectChanges();
     await worker.terminate();
     this.createOverlay(words);
   }
