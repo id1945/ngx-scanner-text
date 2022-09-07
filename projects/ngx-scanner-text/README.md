@@ -1,7 +1,7 @@
 # ngx-scanner-text
 
-This library is built with the purpose of automatically getting text in images.
-This is the [codesandbox](https://codesandbox.io/s/angular-ngx-scanner-text-16856z).
+This library is built with the purpose of automatically getting text in images.\
+This is the [codesandbox](https://codesandbox.io/s/angular-ngx-scanner-text-16856z?file=/src/app/app.component.ts).
 
 ![Logo](https://raw.githubusercontent.com/id1945/ngx-scanner-text/master/ngx-scanner-text-mark.png)
 
@@ -25,6 +25,7 @@ export class AppModule {}
   [languages]="['eng']"
   [src]="'https://tesseract.projectnaptha.com/img/eng_bw.png'"
   (data)="onData($event)"
+  (logger)="onLogger($event)"
 ></ngx-scanner-text>
 
 <pre>
@@ -43,6 +44,9 @@ import { Component } from "@angular/core";
 export class AppComponent {
   onData(e) {
     console.log(e.text);
+  }
+  onLogger(e) {
+    console.log(e);
   }
 }
 ```
